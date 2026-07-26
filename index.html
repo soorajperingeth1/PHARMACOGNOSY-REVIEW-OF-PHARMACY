@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Flashcards</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --answer-bg: #f1f5f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .qa-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .question {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .answer-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .answer-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .answer {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--answer-bg);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .answer.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Q&A</h1>
+
+    <!-- QUESTION 1 -->
+    <div class="qa-card">
+        <div class="question">Q1: What is the primary active ingredient in aspirin?</div>
+        <button class="answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+        <div class="answer">
+            Acetylsalicylic acid (ASA).
+        </div>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="qa-card">
+        <div class="question">Q2: How do you initialize a new repository in Git?</div>
+        <button class="answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+        <div class="answer">
+            By running the command <code>git init</code> in your terminal.
+        </div>
+    </div>
+
+    <!-- QUESTION 3 -->
+    <div class="qa-card">
+        <div class="question">Q3: Add your question here?</div>
+        <button class="answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+        <div class="answer">
+            Add your answer here.
+        </div>
+    </div>
+
+    <!-- JavaScript Function -->
+    <script>
+        function toggleAnswer(button) {
+            const answerDiv = button.nextElementSibling;
+            
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                button.textContent = 'Show Answer';
+            } else {
+                answerDiv.classList.add('show');
+                button.textContent = 'Hide Answer';
+            }
+        }
+    </script>
+
+</body>
+</html>
 
