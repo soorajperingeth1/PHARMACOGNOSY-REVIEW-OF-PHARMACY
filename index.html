@@ -148,10 +148,13 @@
     <h1>Pharmacognosy Q&A Master Sheet</h1>
     <p class="subtitle">Complete Question Bank (1 to 175)</p>
 
-    <!-- Search Input -->
+        <!-- Search Input -->
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Search questions across all sets..." onkeyup="handleSearch()">
+        <br>
+        <button id="toggle-all-btn" class="answer-btn" style="margin-top: 0.75rem;" onclick="toggleAllAnswers()">Show All Answers</button>
     </div>
+
 
     <!-- Set Selector Buttons (Top) -->
     <div class="set-btn-container" id="set-buttons-top"></div>
@@ -443,6 +446,11 @@
         renderSetButtons();
         displayCurrentSet();
     </script>
+        <!-- Link your separate script file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
 
 </body>
 </html>
